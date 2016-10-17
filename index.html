@@ -6,7 +6,7 @@
 <script type="text/javascript">
 	var loadApp = function () {
 		var appURL = "agendaauth://";
-		var urlParams = getURLParameters(window.location);
+		var urlParams = getURLParameters(window.location.href);
 		for (var key in urlParams) {
 			appURL += (key + "=" + urlParams[key] + "&")
 		}
