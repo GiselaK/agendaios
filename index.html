@@ -4,8 +4,24 @@
 	<title></title>
 </head>
 <script type="text/javascript">
-	alert(window.location)
-	window.location = "agendaauth://"
+	var loadApp = function () {
+		var appURL = "agendaauth://";
+		var urlParams = getURLParameters(window.location);
+		for (var key in urlParams) {
+			appURL += (key + "=" + urlParams[key] + "&")
+		}
+		appURL = appURL.substring(0, appURL.length - 1)
+		window.location = appURL;
+	}
+	var getURLParameters = function (link) {
+		var urlParams = link.split("#")[1].split("&")
+		var parsedParams = {};
+		for (var i = 0; i < urlParams.length; i++) {
+			parsedParams[urlParams[i].split("=")[0]] = urlParams[i].split("=")[1] ;
+		}
+		return parsedParams;
+	}
+	loadApp()
 </script>
 <body>
 
