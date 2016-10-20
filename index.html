@@ -29,9 +29,8 @@
 	var findReferrer = function () {
 		var previousWindowLocation = document.createElement('a');
 		previousWindowLocation.href = document.referrer;
-		var referrer = previousWindowLocation.host.slice(4, previousWindowLocation.host.length-4)
-		// Remove www. & .com
-		return referrer
+		var referrer = previousWindowLocation.host;
+		return referrer;
 
 	}
 	loadApp()
