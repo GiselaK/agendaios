@@ -19,7 +19,7 @@
 		return appUrl
 	}
 	var getURLParameters = function (link) {
-		var urlParams = link.split("#")[1].split("&")
+		var urlParams = link.split("?")[1].split("&")
 		var parsedParams = {};
 		for (var i = 0; i < urlParams.length; i++) {
 			parsedParams[urlParams[i].split("=")[0]] = urlParams[i].split("=")[1] ;
