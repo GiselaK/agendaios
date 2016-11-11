@@ -29,7 +29,7 @@
 	var findReferrer = function () {
 		var previousWindowLocation = document.createElement('a');
 		previousWindowLocation.href = document.referrer;
-		var referrer = previousWindowLocation.host;
+		var referrer = previousWindowLocation.host || "unknown";
 		return referrer;
 
 	}
